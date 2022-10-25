@@ -26,6 +26,7 @@ for record in SeqIO.parse(str(fasta_name), 'fasta'):
 #Counts for calculating amount and total basepair
 count = 0
 total_len = 0
+point_five_total = 0
 
 #Loops record list and extracts column properties
 for item in record_list:
@@ -34,6 +35,7 @@ for item in record_list:
     name = item[0]
     olgio = item [1]
     if len(olgio) >= 36:
+        point_five_total += (len(oligo)) #updated for new macrogen requirements
         amount = 0.05
     else: 
         amount = 0.025
@@ -57,5 +59,5 @@ Amount, Purification'.split(', '))
 data_frame.to_excel(str(dataframe_name), index = False,)
 
 #Let user know if successful and total basepairs
-print (f'You have {total_len} base pairs')
+print (f'You have {total_len} base pairs and {point_five_total} are over 35mr')
 print ('Excel spreadsheet made')
