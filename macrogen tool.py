@@ -35,7 +35,7 @@ for item in record_list:
     name = item[0]
     olgio = item [1]
     if len(olgio) >= 36:
-        point_five_total += (len(oligo)) #updated for new macrogen requirements
+        point_five_total += (len(olgio)) #updated for new macrogen requirements
         amount = 0.05
     else: 
         amount = 0.025
